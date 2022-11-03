@@ -13,6 +13,8 @@ const publisher = document.querySelector("input[name=publisher]")
 const ISBN = document.querySelector("input[name=ISBN]")
 const reg = document.querySelector("input[name=reg]")
 
+const errory = document.querySelector("#errory");
+
 let baza = []
 
 
@@ -59,13 +61,13 @@ fom.addEventListener("submit", (e)=>{
 
     if(isNaN(ag))
     {
-        alert("Zła wartość w polu wiek.");
+        errory.innerHTML += "Niewłaściwa wartość w polu wiek.<br>";
         return 0;
     }
 
     if(!isPESEL(PES))
     {
-        alert("Zły PESEL.");
+        errory.innerHTML += "Zły PESEL<br>";
         return 0;
     }  
 
