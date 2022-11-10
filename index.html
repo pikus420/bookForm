@@ -10,26 +10,39 @@
 </head>
 <body>
     <form>
-        <input required type="text" placeholder="*Imię" name="name1"><br>
+        <label>*Imię</label><br>
+        <input required type="text" placeholder="*Imię" name="name1" id="name1"><br>
+        <label>*Nazwisko</label><br>
         <input required type="text" placeholder="*Nazwisko" name="name2"><br>
+        <label>Wiek</label><br>
         <input type="text" placeholder="Wiek" name="age"><br>
+        <label>*Email</label><br>
         <input required type="email" placeholder="*Email" name="email"><br>
+        <label>*PESEL</label><br>
         <input required type="number" placeholder="*PESEL" name="PESEL">
+        
         <div id="gender">
-                <p>*Płeć</p>
+                <label>*Płeć</label>
                 <select name="sex">
                     <option>Kobieta</option>
                     <option>Mężczyzna</option>
                     <option>Inna</option>
                 </select>
         </div>
+        <label>*Telefon</label><br>
         <input required type="number" placeholder="*Telefon" name="phone"><br>
+        <label>Klasa</label><br>
         <input type="text" placeholder="Klasa" name="class"><br>
+        <label>*Tytuł</label><br>
         <input required type="text" placeholder="*Tytuł" name="title"><br>
+        <label>*Wydawca</label><br>
         <input required type="text" placeholder="*Wydawca" name="publisher"><br>
+        <label>*ISBN</label><br>
         <input required type="text" placeholder="*ISBN" name="ISBN"><br>
+        <label>*Numer ewidencyjny</label><br>
         <input required type="text" placeholder="*Numer ewidencyjny" name="reg"><br>
-        <input type="text" placeholder="Uwagi"><br>
+        <label>Uwagi</label><br>
+        <textarea placeholder="Uwagi" rows="4" cols="26" name="others"></textarea><br>
         <input type="submit" value="Wyślij">
 
     </form>

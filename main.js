@@ -12,6 +12,7 @@ const title = document.querySelector("input[name=title]")
 const publisher = document.querySelector("input[name=publisher]")
 const ISBN = document.querySelector("input[name=ISBN]")
 const reg = document.querySelector("input[name=reg]")
+const others = document.querySelector("textarea[name=others]")
 
 const comms = document.querySelector("#comms");
 
@@ -60,12 +61,11 @@ fom.addEventListener("submit", (e)=>{
     let pub = publisher.value;
     let id = ISBN.value;
     let regi = reg.value;
+    let othe = others.value;
 
     let err = false;
 
-    console.log(ag)
-
-    if((isNaN(ag) || ag < 1) && ag != "")
+    if((isNaN(ag) || ag < 1 || ag.length > 2) && ag != "")
     {
         comms.innerHTML += "Niewłaściwa wartość w polu wiek.<br>";
         err = true;
@@ -98,7 +98,8 @@ fom.addEventListener("submit", (e)=>{
         title: tytle,
         publisher: pub,
         ISBN: id,
-        reg: regi
+        reg: regi,
+        oth: othe
     }
 
     baza.push(data);
