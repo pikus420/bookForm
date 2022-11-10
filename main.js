@@ -61,19 +61,30 @@ fom.addEventListener("submit", (e)=>{
     let id = ISBN.value;
     let regi = reg.value;
 
+    let err = false;
+
     console.log(ag)
 
     if((isNaN(ag) || ag < 1) && ag != "")
     {
-        comms.innerHTML += "Niewłaściwa wartość w polu wiek.";
-        return 0;
+        comms.innerHTML += "Niewłaściwa wartość w polu wiek.<br>";
+        err = true;
+    }
+
+    if(tel.length != 9)
+    {
+        comms.innerHTML += "Numer telefonu ma niewłaściwą długość.<br>";
+        err = true;
     }
 
     if(!isPESEL(PES))
     {
-        comms.innerHTML += "Zły PESEL";
+        comms.innerHTML += "Zły PESEL<br>";
+        err = true;
+    }
+
+    if(err)
         return 0;
-    }  
 
     const data = {
         firstName: nm1,
