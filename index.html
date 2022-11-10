@@ -6,41 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularze</title>
     <script defer src="main.js"></script>
-
-    <style>
-        input, select
-        {
-            width: 200px;
-            height: 20px;
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form>
-        <input required type="text" placeholder="imię" name="name1"><br>
-        <input required type="text" placeholder="nazwisko" name="name2"><br>
+        <input required type="text" placeholder="*imię" name="name1"><br>
+        <input required type="text" placeholder="*nazwisko" name="name2"><br>
         <input type="text" placeholder="Wiek" name="age"><br>
-        <input required type="email" placeholder="Email" name="email"><br>
-        <input required type="number" placeholder="PESEL" name="PESEL"><br>
-        <label>Płeć
-            <select name="sex">
-                <option>Kobieta</option>
-                <option>Mężczyzna</option>
-                <option>Inna</option>
-            </select>
-        </label><br>
-        <input required type="number" placeholder="Telefon" name="phone"><br>
+        <input required type="email" placeholder="*Email" name="email"><br>
+        <input required type="number" placeholder="*PESEL" name="PESEL">
+        <div id="gender">
+                <p>*Płeć</p>
+                <select name="sex">
+                    <option>Kobieta</option>
+                    <option>Mężczyzna</option>
+                    <option>Inna</option>
+                </select>
+        </div>
+        <input required type="number" placeholder="*Telefon" name="phone"><br>
         <input type="text" placeholder="Klasa" name="class"><br>
-        <input required type="text" placeholder="Tytuł" name="title"><br>
-        <input required type="text" placeholder="Wydawca" name="publisher"><br>
-        <input required type="text" placeholder="ISBN" name="ISBN"><br>
-        <input required type="text" placeholder="Numer ewidencyjny" name="reg"><br>
+        <input required type="text" placeholder="*Tytuł" name="title"><br>
+        <input required type="text" placeholder="*Wydawca" name="publisher"><br>
+        <input required type="text" placeholder="*ISBN" name="ISBN"><br>
+        <input required type="text" placeholder="*Numer ewidencyjny" name="reg"><br>
         <input type="text" placeholder="Uwagi"><br>
-        <input type="submit" value="Wyślij essa">
+        <input type="submit" value="Wyślij">
 
     </form>
 
-    <div id="errory"></div>
+    <div id="comms"></div>
 </body>
 </html>

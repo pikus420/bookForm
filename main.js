@@ -13,7 +13,7 @@ const publisher = document.querySelector("input[name=publisher]")
 const ISBN = document.querySelector("input[name=ISBN]")
 const reg = document.querySelector("input[name=reg]")
 
-const errory = document.querySelector("#errory");
+const comms = document.querySelector("#comms");
 
 let baza = []
 
@@ -45,6 +45,8 @@ function isPESEL(PESEL)
 }
 
 fom.addEventListener("submit", (e)=>{
+    comms.style.color = "red";
+    comms.innerHTML = "";
     e.preventDefault();
     let nm1 = name1.value;
     let nm2 = name2.value;
@@ -59,15 +61,17 @@ fom.addEventListener("submit", (e)=>{
     let id = ISBN.value;
     let regi = reg.value;
 
-    if(isNaN(ag))
+    console.log(ag)
+
+    if((isNaN(ag) || ag < 1) && ag != "")
     {
-        errory.innerHTML += "Niewłaściwa wartość w polu wiek.<br>";
+        comms.innerHTML += "Niewłaściwa wartość w polu wiek.";
         return 0;
     }
 
     if(!isPESEL(PES))
     {
-        errory.innerHTML += "Zły PESEL<br>";
+        comms.innerHTML += "Zły PESEL";
         return 0;
     }  
 
@@ -86,6 +90,7 @@ fom.addEventListener("submit", (e)=>{
         reg: regi
     }
 
-    baza.push(data)
-
+    baza.push(data);
+    comms.style.color = "green";
+    comms.innerHTML = "Wysłano formularz! :)";
 })
